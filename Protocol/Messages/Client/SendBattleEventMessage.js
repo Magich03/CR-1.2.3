@@ -21,7 +21,7 @@ class SendBattleEventMessage extends PiranhaMessage {
     this.data.Value1 = this.readVInt()
     this.data.Value2 = this.readVInt()
 
-    console.log(this.data)
+    //console.log(this.data)
   }
 
   async process () {

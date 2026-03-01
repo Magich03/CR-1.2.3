@@ -14,7 +14,7 @@ class ClientCapabilitiesMessage extends PiranhaMessage {
     this.data.Ping = this.readVInt()
     this.data.Interface = this.readString()
 
-    console.log(this.data)
+    //console.log(this.data)
   }
 
   async process () {

@@ -11,7 +11,11 @@ server.on('connection', async (client) => {
   client.setNoDelay(true)
   client.log = function (text) {
     if (config.Debug) {
-      return console.log(`[${this.remoteAddress.split(':').slice(-1)}] >> ${text}`)
+      if (config.StreamerMode) {
+        return console.log(`[*] >> ${text}`)
+      } else {
+        return console.log(`[${this.remoteAddress.split(':').slice(-1)}] >> ${text}`)
+      }
     }
     else
     {

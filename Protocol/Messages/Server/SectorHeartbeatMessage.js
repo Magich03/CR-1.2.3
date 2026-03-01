@@ -1,6 +1,6 @@
 const PiranhaMessage = require('../../PiranhaMessage')
 
-class SectorHearbeatMessage extends PiranhaMessage {
+class SectorHeartbeatMessage extends PiranhaMessage {
   constructor (client, turn, commands) {
     super()
     this.id = 21902
@@ -20,4 +20,4 @@ class SectorHearbeatMessage extends PiranhaMessage {
   }
 }
 
-module.exports = SectorHearbeatMessage
+module.exports = SectorHeartbeatMessage

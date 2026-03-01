@@ -1,5 +1,5 @@
 const PiranhaMessage = require('../../PiranhaMessage')
-const SectorHearbeatMessage = require('../Server/SectorHearbeatMessage')
+const SectorHeartbeatMessage = require('../Server/SectorHeartbeatMessage')
 const LogicBattle = require('../../../Battle/LogicBattle')
 
 class SectorCommandMessage extends PiranhaMessage {
@@ -17,7 +17,7 @@ class SectorCommandMessage extends PiranhaMessage {
     this.data.Tick = this.readVInt()
     this.data.Count = this.readVInt()
 
-    console.log(this.data)
+    //console.log(this.data)
   }
 
   async process () {
@@ -26,7 +26,7 @@ class SectorCommandMessage extends PiranhaMessage {
     //if (this.data.Count < 0 || this.data.Count > 128) return
 
     const battle = new LogicBattle()
-    await new SectorHearbeatMessage(this.client, battle.Tick(300), 0).send()
+    await new SectorHeartbeatMessage(this.client, battle.Tick(300), 0).send()
 
     for (var i = 0; i < this.data.Count; i++)
     {

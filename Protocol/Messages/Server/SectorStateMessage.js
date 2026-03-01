@@ -1,6 +1,6 @@
 const PiranhaMessage = require('../../PiranhaMessage')
 
-class NpcSectorStateMessage extends PiranhaMessage {
+class SectorStateMessage extends PiranhaMessage {
   constructor (client) {
     super()
     this.id = 21903
@@ -14,4 +14,4 @@ class NpcSectorStateMessage extends PiranhaMessage {
   }
 }
 
-module.exports = NpcSectorStateMessage
+module.exports = SectorStateMessage

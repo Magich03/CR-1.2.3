@@ -15,7 +15,7 @@ class ChangeAvatarNameMessage extends PiranhaMessage {
     this.data.some = this.readString()
     this.data.thing = this.readString()
 
-    console.log(this.data)
+    //console.log(this.data)
   }
 
   async process () {
