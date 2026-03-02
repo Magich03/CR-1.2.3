@@ -49,7 +49,7 @@ class ClientAvatar {
     self.writeVInt(1000000000) // Diamonds
     self.writeVInt(1000000000) // FreeDiamonds
     self.writeVInt(0) // Experience
-    self.writeVInt(5) // Level (12 = Max level)
+    self.writeVInt(1) // Level (12 = Max level)
 
     self.writeHex('9885')
 
