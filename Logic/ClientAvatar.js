@@ -49,7 +49,9 @@ class ClientAvatar {
     self.writeVInt(1000000000) // Diamonds
     self.writeVInt(1000000000) // FreeDiamonds
     self.writeVInt(0) // Experience
-    self.writeVInt(1) // Level (12 = Max level)
+    self.writeVInt(5) // Level (12 = Max level)
+
+    self.writeHex('9885')
 
     // 7 = Name already set + no clan
     // 8 = Set name popup + clan
@@ -57,13 +59,18 @@ class ClientAvatar {
     // < 7 =  Set name popup
     const InClan = 0
     if (InClan == 1) {
+      self.writeByte(1)
       self.writeByte(9)
+      self.writeByte(0)
       self.writeLong(0, 1) // HighID, LowID
-      self.writeString('Greedycell') // Name
-      self.writeByte(1) // Badge
-      self.writeVInt(4) // Role
+      self.writeString('Clashers') // Name
+      self.writeByte(16)
+      self.writeVInt(1) // Badge
+      self.writeHex('91189F0BAC0A7F1601F188839406')
     } else {
       self.writeByte(0)
+      self.writeByte(0) // NameSet
+      self.writeHex('000000000600E1F1FBF302')
     }
   }
 }
